@@ -1,5 +1,8 @@
 # Air-Gapped SOC & Active Defense Lab
 
+![soc_lab](https://github.com/user-attachments/assets/1626b5f0-8696-4b5b-b6a4-cb5c2250f96c)
+
+
 ## Project Overview
 This project simulates a complete, end-to-end cyber attack and detection lifecycle. To ensure safety and zero leakage to production networks, I engineered a fully air-gapped physical network bridging an attacker virtual machine with a physical Windows target. I then deployed an enterprise-grade SIEM to detect and map attacks to the MITRE ATT&CK framework.
 
@@ -17,6 +20,11 @@ This project simulates a complete, end-to-end cyber attack and detection lifecyc
 * Established a direct physical connection via Ethernet between the macOS host and Windows target.
 * Assigned static IP addresses to the virtual and physical interfaces to ensure localized routing.
 
+![eth1](https://github.com/user-attachments/assets/0df55331-474a-45c7-b7e0-cdc23db00185)
+
+![eth2](https://github.com/user-attachments/assets/cd71d4ea-9d07-4b52-8741-58191a5999ff)
+
+
 ### Step 2: Target Telemetry Configuration
 * Installed **Microsoft Sysmon** on the Windows 11 target.
 * Configured Sysmon to log network connections (Event ID 3) to capture inbound reconnaissance.
@@ -31,7 +39,8 @@ This project simulates a complete, end-to-end cyber attack and detection lifecyc
 * Initiated a targeted, aggressive Nmap scan from the Kali Linux VM across the physical cable targeting the open Python port:
   `sudo nmap -sV -p 8080 192.168.100.2`
 
-![Kali Nmap Scan Results](kalinmap.png)
+![kalinmap](https://github.com/user-attachments/assets/219734aa-5a34-4aca-84fd-b07f282ead36)
+
 
 * Executed a command to clear the Windows Security logs (`wevtutil cl security`) to simulate an attacker attempting Defense Evasion.
 
@@ -41,7 +50,7 @@ This project simulates a complete, end-to-end cyber attack and detection lifecyc
   * **Discovery (T1046):** Network Service Discovery (The Nmap scan)
   * **Defense Evasion (T1070):** Indicator Removal on Host (The cleared logs)
 
-![Wazuh MITRE ATT&CK Dashboard](wazuh.png)
+![wazuh](https://github.com/user-attachments/assets/8f8cb195-b01c-4918-a9ff-60800dca6111)
 
 ## Conclusion
 This lab provided hands-on experience in bridging virtualized networking with physical hardware, configuring endpoint detection mechanisms, and translating raw system logs into actionable security alerts.
