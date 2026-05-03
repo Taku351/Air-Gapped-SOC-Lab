@@ -1,6 +1,7 @@
 # Air-Gapped SOC & Active Defense Lab
 
-![soc_lab](soc_lab.jpg)
+<img width="951" height="773" alt="soc_lab" src="https://github.com/user-attachments/assets/7140ba6e-87e9-47e3-a56e-3f812573b846" />
+
 
 ## Project Overview
 This project simulates a complete, end-to-end cyber attack and detection lifecycle. To ensure safety and zero leakage to production networks, I engineered a fully air-gapped physical network bridging an attacker virtual machine with a physical Windows target. I then deployed an enterprise-grade SIEM to detect and map attacks to the MITRE ATT&CK framework.
